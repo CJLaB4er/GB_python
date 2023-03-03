@@ -22,7 +22,10 @@ numb = 0
 diff = 1000
 
 for i in ls:
-    if
+    if abs(x - i) < diff and abs(x - i) !=0:
+        numb = i
+        diff = x - i
+print(numb)
 
 
 
