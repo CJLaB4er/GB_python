@@ -16,5 +16,5 @@ set_two = {int(i) for i in input("Введите элементы второго
 
 result_set = sorted(set_one & set_two)
 
-print(f'Элементы содержащиеся в двух свписках по порядку : ', end=" ")
+print(f'Элементы содержащиеся в двух списках по порядку : ', end=" ")
 print(*result_set, sep=", ")
