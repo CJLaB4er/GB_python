@@ -12,7 +12,7 @@ m = int(input("Введите количество элементов второ
 
 set_one = {int(i) for i in input("Введите элементы первого списка через пробел   ").split()}
 
-set_two = {int(i) for i in input("Введите элементы первого списка через пробел   ").split()}
+set_two = {int(i) for i in input("Введите элементы второго списка через пробел   ").split()}
 
 result_set = sorted(set_one & set_two)
 
