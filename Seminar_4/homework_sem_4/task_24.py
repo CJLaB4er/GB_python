@@ -14,17 +14,15 @@
 
 n = int(input("Введите общее количество кустов   "))
 
-d = {}
-i = 0
-while i < n:
-    d[i] = int(input(f'Введите количество ягод на {i+1} кусте(у)   '))
-    i +=1
+list = []
+
+for i in range(n):
+    list.append(int(input(f'Введите количество ягод на {i+1} кусте(у)   ')))
 
 max_count = 0
 
-for i in range(1, len(d) - 1):
-    if d[i-1] + d[i] + d[i+1] > max_count: max_count = d[i-1] + d[i] + d[i+1]
-
-if d[0] + d[len(d)-1] + d[len(d)-2] > max_count: max_count = d[0] + d[len(d)-1] + d[len(d)-2]
+for i in range(len(list)):
+    temp_count = list[i - 2] + list[i -1] + list[i]
+    if temp_count > max_count: max_count = temp_count
 
 print(f'Наибольшее количество ягод которое модуль может собрать за раз: {max_count}')
