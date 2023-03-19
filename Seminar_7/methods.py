@@ -5,8 +5,6 @@ def write_data() -> None:
     print('\nДанные успешно добавлены в справочник\n')
 
 def print_data(data: list) -> None:
-    index = 1
     for line in data:
-        print(f'{index}. {line}', end='')
-        index += 1
+        print(f'>> {line}', end='')
     print('\n')
