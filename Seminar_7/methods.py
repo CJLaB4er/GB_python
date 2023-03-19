@@ -1,7 +1,7 @@
-def write_data() -> None:
-    data = input()
+def write_data(data:list) -> None:
     with open('telephone_directory.txt', 'a', encoding='utf-8') as file:
-        file.write(f'{data} \n')
+        for line in data:
+            file.write(f'{line} \n')
     print('\nДанные успешно добавлены в справочник\n')
 
 def print_data(data: list) -> None:

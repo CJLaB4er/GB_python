@@ -12,7 +12,8 @@ while True:
     print()
     match choice:
         case 1:
-            methods.write_data()
+            data = [input('Введите данные для добавления в справочник: ')]
+            methods.write_data(data)
         case 2: # Здесь будет ссылка на метод вывода всего справочника
             with open('telephone_directory.txt', 'r', encoding='utf-8') as file:
                 data = file.readlines()
