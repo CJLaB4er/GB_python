@@ -13,7 +13,6 @@ while True:
     match choice:
         case 1:
             data = [input('Введите данные для добавления в справочник: ')]
-            # data = ['Первая запись', 'Вторая запись', 'Третья запись']
             methods.write_data(data)
         case 2:
             with open('telephone_directory.txt', 'r', encoding='utf-8') as file:

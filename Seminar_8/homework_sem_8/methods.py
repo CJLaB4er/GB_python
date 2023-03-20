@@ -19,7 +19,7 @@ def search_in_file() -> list:
     with open('telephone_directory.txt', 'r', encoding='utf-8') as file:
         for line in file:
             if search.lower() in line.lower():
-                result.append(line[:-1])  # срез отсекает непечатный символ переноса строки
+                result.append(line)
         return result
 
 
@@ -29,18 +29,18 @@ def delete_line_in_file() -> None:
     data = list()
     with open('telephone_directory.txt', 'r', encoding='utf-8') as file:
         for line in file:
-            if line[:-1] not in delete_data:
+            if line not in delete_data:
                 data.append(line[:-1])
     write_data(data, 'w')
 
 # Ф-я принимает список из одного значения - строку которую надо изменить, и заменяет ее на вновь введённое значение
 def change_line_in_file(line: list) -> None:
-    print(f'Строка >>{line[0]}<< будет изменена')
+    print(f'Строка >>{line[0][:-1]}<< будет изменена')
     new_line = input('Введите новое значение')
     data = list()
     with open('telephone_directory.txt', 'r', encoding='utf-8') as file:
         for i in file:
-            if i[:-1] != line[0]:
+            if i != line[0]:
                 data.append(i[:-1])
             else:
                 data.append(new_line)
