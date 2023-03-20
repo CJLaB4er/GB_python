@@ -26,12 +26,16 @@ def search_in_file() -> list:
 # Ф-я по введенному параметру находит строку(и) и перезаписывает файл без найденных строк
 def delete_line_in_file() -> None:
     delete_data = search_in_file()
-    data = list()
-    with open('telephone_directory.txt', 'r', encoding='utf-8') as file:
-        for line in file:
-            if line not in delete_data:
-                data.append(line[:-1])
-    write_data(data, 'w')
+    print('Следующие строки будут удалены:')
+    print_data(delete_data)
+    choice = input('Введите Да, для подтверждения, ввод иного значения вернет вас в начало программы ')
+    if choice.lower() == 'да':
+        data = list()
+        with open('telephone_directory.txt', 'r', encoding='utf-8') as file:
+            for line in file:
+                if line not in delete_data:
+                    data.append(line[:-1])
+        write_data(data, 'w')
 
 # Ф-я принимает список из одного значения - строку которую надо изменить, и заменяет ее на вновь введённое значение
 def change_line_in_file(line: list) -> None:
