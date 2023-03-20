@@ -20,8 +20,6 @@ def search_in_file() -> list:
         for line in file:
             if search.lower() in line.lower():
                 result.append(line[:-1])  # срез отсекает непечатный символ переноса строки
-        if len(result) < 1:
-            result.append('Поиск не дал результата, попробуйте изменить параметры поиска.')
         return result
 
 

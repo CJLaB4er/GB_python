@@ -15,12 +15,18 @@ while True:
             data = [input('Введите данные для добавления в справочник: ')]
             # data = ['Первая запись', 'Вторая запись', 'Третья запись']
             methods.write_data(data)
-        case 2: # Здесь будет ссылка на метод вывода всего справочника
+        case 2:
             with open('telephone_directory.txt', 'r', encoding='utf-8') as file:
                 data = file.readlines()
                 methods.print_data(data)
+                print()
         case 3:
-            methods.print_data(methods.search_in_file())
+            data = methods.search_in_file()
+            if len(data) < 1:
+                print('\nПо вашему запросу ничего не найдено, повторите попытку.\n')
+            else:
+                methods.print_data(data)
+                print('\n')
         case 4:
             methods.delete_line_in_file()
         case 5: # Здесь будет ссылка на метод редактировния строки
