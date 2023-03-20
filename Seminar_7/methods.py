@@ -33,3 +33,15 @@ def delete_line_in_file() -> None:
                 data.append(line[:-1])
     write_data(data, 'w')
 
+# Ф-я принимает список из одного значения - строку которую надо изменить, и заменяет ее на вновь введённое значение
+def change_line_in_file(line: list) -> None:
+    print(f'Строка >>{line[0]}<< будет изменена')
+    new_line = input('Введите новое значение')
+    data = list()
+    with open('telephone_directory.txt', 'r', encoding='utf-8') as file:
+        for i in file:
+            if i[:-1] != line[0]:
+                data.append(i[:-1])
+            else:
+                data.append(new_line)
+    write_data(data, 'w')
